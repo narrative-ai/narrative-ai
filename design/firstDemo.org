@@ -1,0 +1,33 @@
+* Objectives 
+
+The first situation should be modeled around an agent and a few objects around
+him, and it has to model the creation of a plan, the realization of its
+impossibility and the subsequent change of plan. In this, we want the agent to
+"learn" in a very specific and restricted way.
+
+We can have increasingly many befuddlings:
+- first  :: the door is open. no problem, just walk through.
+- second :: the door is closed. ok, open the door, then walk through.
+- third  :: the door is closed and locked, and the key is sitting out in the
+     room this would require that the bot *discover* that the door is locked (as
+     opposed to merely closed) and then revise its plans accordingly.
+- fourth :: the door is closed and locked, and the key isn't visible by looking
+     around, necessitating search.
+
+** TODO Figure out the expected behavior
+Let's script out what we expect the bot to do, by writing out the steps, like in
+"it tries to do X, but finds out Y, so Z".
+
+*** It tries to
+pass through the door
+**** but
+nothing
+**** so
+he passes through the door.
+
+*** It tries to
+pass through the door
+**** but
+the door is closed
+**** so
+he learns that the door is closed.
