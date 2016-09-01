@@ -13,6 +13,26 @@ We can have increasingly many befuddlings:
      opposed to merely closed) and then revise its plans accordingly.
 - fourth :: the door is closed and locked, and the key isn't visible by looking
      around, necessitating search.
+     
+** Actions
+For a planning algorithm to work, we need to specify actions and their probable outcome. Examples:
+- Walk
+-- Preconditions: be at (X0,Y0), path clear and known from (X0,Y0) to (X1,Y1)
+-- Postconditions: be at (X1,Y1)
+- Explore
+-- Preconditions: be at (X0,Y0), (X0,Y0) is under fog of war
+-- Postconditions: (X0,Y0) is not under fog of war
+- Try door
+-- Precondition: have a door next to it
+-- Postcondition: EITHER door opens OR learn that the door is closed (unknown probabilities)
+- Take item
+-- Precondition: have item (e.g. key) next to it
+-- Postcondition: inventory updated
+- Open door with key
+-- Precondition: have key
+-- Postcondition: door open
+
+We may need to add certain axioms, like "if an item was in P, then it is always in P unless taken".
 
 ** TODO Figure out the expected behavior
 Let's script out what we expect the bot to do, by writing out the steps, like in
